@@ -1,0 +1,102 @@
+.main-color {
+  background-color: #80CBC4;
+}
+.img-logo img {
+  width: 7%;
+  display: inline-block;
+}
+.content {
+  height: calc(100% - 50px);
+}
+.content2 {
+  height: calc(100vh - 50px);
+}
+.side {
+  min-width: 150px;
+}
+.max-w-500 {
+  max-width: 500px;
+}
+.logo-wrap {
+  margin-top: 50px;
+}
+.logo-wrap h3 {
+  color: #009688;
+}
+.login-wrap {
+  width: 25rem;
+}
+.login-btn {
+  background-color: #eba026;
+  color: white;
+}
+.page-title {
+  color: #2e847b;
+  margin: 30px 0 25px 0;
+  padding: 20px 0 20px 10px;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  border-bottom: 2px solid #d5d5d5;
+  border-top: 2px solid #d5d5d5;
+}
+.search-card {
+  background-color: #00a38d1b;
+  border: none;
+  padding: 10px 20px;
+}
+.label-sm {
+  border-left: solid 7px #00ab9a;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.btn-width {
+  width: 250px;
+}
+.search-btn {
+  background-color: #00ab9a;
+  color: #fff;
+  height: 45px;
+  border-radius: 8px;
+}
+.clear-btn {
+  background-color: #8ba19e;
+  color: #fff;
+  height: 45px;
+  border-radius: 8px;
+  border: none;
+}
+.icon-position {
+  position: relative;
+}
+.reset-icon {
+  position: absolute;
+  top: 0.9rem;
+  left: 4.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: #00beab;
+}
+.download-btn {
+  background-color: #f2f2f2;
+}
+.hospitals-table {
+  background-color: #fff1a56d;
+}
+/* 必須マーク */
+.required {
+  background-color: #e4604e;
+  color: #fff;
+  font-size: 12px;
+  padding: 1px 4px;
+  margin-left: 7px;
+  border-radius: 6px;
+}
+.ms-n5 {
+  margin-left: -1.5rem;
+}
+.mt-n2 {
+  margin-top: -0.5rem;
+}

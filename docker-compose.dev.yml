@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./docker/backend
+    volumes:
+      - ./backend:/var/web/html
+    ports:
+      - "${BACKEND_PORT}:9000"
+    env_file:
+      - ./.env
+    tty: true
+  frontend:
+    build:
+      context: ./docker/frontend
+    ports:
+      - "${FRONTEND_PORT}:3000"
+    command: sh -c "${FRONTEND_CMD}"
+    volumes:
+      - ./frontend:/src
+      - ./docker/frontend/node_modules:/src/node_modules
+    env_file:
+      - ./.env
+    tty: true
+  db:
+    build: ./docker/mysql
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    env_file:
+      - ./.env
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    volumes:
+      - ./docker/phpmyadmin/phpmyadmin-misc.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
+    env_file:
+      - ./.env
+    ports:
+      - ${PHPMYADMIN_PORT}:80
+  web:
+    build:
+      context: ./docker/nginx
+    ports:
+      - ${WEB_PORT}:80
+    depends_on:
+      - frontend
+      - backend
+      - phpmyadmin
+    volumes:
+      - ./backend:/var/web/html
+
